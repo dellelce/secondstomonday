@@ -44,14 +44,28 @@ function initializeClock(id, endtime){
 // "Main"
 //
 
-var deadline = '2016-10-4';
+var now = new Date()
+var today = now.getDay();
+var year = now.getFullYear();
+var ym = [now.getFullYear(),(now.getMonth()+1)].join('-')
+if (today != 1)
+{
+ var _day = new Date();
+ _day.setDate(_day.getDate() + (1 + 7 - _day.getDay()) % 7);
+ var monday = [_day.getFullYear(),(_day.getMonth()+1),_day.getDate()].join('-')
+}
+else
+{
+ // get today's midnight?
+ //
+}
 
-initializeClock('clockdiv', deadline);
+initializeClock('clockdiv', monday);
+//DEBUG ONLY
+//document.getElementById('debug').innerHTML = monday;
 
 // more tests
 //
-var d = new Date();
-var today = d.getDay();
 if (today == 1)
 {
  document.getElementById('second').innerHTML = "But be hopeful, Monday is leaving us in:";
