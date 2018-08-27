@@ -23,14 +23,15 @@ function initializeClock(id, endtime){
     var sep = '&nbsp;';
     if (t.days != 0)
      {
-       clock.innerHTML = 'Days: ' + t.days + sep +
-                      'hours: '+ t.hours + sep +
-                      'minutes: ' + t.minutes + sep +
-                      'seconds: ' + t.seconds;
+       clock.innerHTML = t.days    + ' Days'     + sep +
+                         t.hours   + ' hours '   + sep +
+                         t.minutes + ' minutes ' + sep +
+                         'and ' + t.seconds + ' seconds!';
      }
     else
      {
-       clock.innerHTML = t.hours   + ' hours '       + sep +
+       clock.innerHTML = '<br>' +
+                         t.hours   + ' hours '       + sep +
                          t.minutes + ' minutes and ' + sep +
                          t.seconds + ' seconds!'
      }
